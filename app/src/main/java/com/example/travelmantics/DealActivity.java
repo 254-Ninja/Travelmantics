@@ -65,11 +65,24 @@ public class DealActivity extends AppCompatActivity {
         return true;
     }
     private void saveDeal(){
-        String title = txtTitle.getText().toString();
-        String description = txtDescription.getText().toString();
-        String price = txtPrice.getText().toString();
-        TravelDeal deal = new TravelDeal(title, description, price, "");
-        mDatabaseReference.push().setValue(deal);
+        deal.setTitle(txtTitle.getText().toString());
+        deal.setDescription(txtDescription.getText().toString());
+        deal.setPrice(txtPrice.getText().toString());
+        if(deal.getId()==null) {
+            mDatabaseReference.push().setValue(deal);
+        }
+        else {
+            mDatabaseReference.child(deal.getId()).setValue(deal);
+        }
+
+    }
+
+    private void deleteDeal(){
+        if (deal == null) {
+            Toast.makeText(this,"please save the deal before deleting", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        mDatabaseReference.child(deal.getId()).removeValue();
     }
     private void clean(){
         txtTitle.setText("");
