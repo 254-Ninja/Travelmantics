@@ -6,4 +6,9 @@
     app:showAsAction="always">
 
 </item>
+    <item android:id="@+id/delete_menu"
+        android:title="@string/delete_deal"
+        app:showAsAction="never">
+
+    </item>
 </menu>

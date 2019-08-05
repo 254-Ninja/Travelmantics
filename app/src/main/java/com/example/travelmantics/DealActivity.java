@@ -49,9 +49,13 @@ public class DealActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.save_menu:
                 saveDeal();
-                Toast.makeText(this, "Deal saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Deal saved", Toast.LENGTH_LONG).show();
                 clean();
+                
                 return true;
+            case R.id.delete_menu:
+                deleteDeal();
+                Toast.makeText(this, "Deal Deleted", Toast.LENGTH_LONG).show();
                 default:
                     return super.onOptionsItemSelected(item);
         }
@@ -83,6 +87,11 @@ public class DealActivity extends AppCompatActivity {
             return;
         }
         mDatabaseReference.child(deal.getId()).removeValue();
+    }
+
+    private void backToList(){
+        Intent intent = new Intent(this, ListActivity.class);
+        startActivity(intent);
     }
     private void clean(){
         txtTitle.setText("");
