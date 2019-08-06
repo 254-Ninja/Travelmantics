@@ -31,7 +31,7 @@ import com.squareup.picasso.Picasso;
 
 
 public class DealActivity extends AppCompatActivity {
-    public static final int PICTURE_RESULT = 42;
+    public static final int PICTURE_RESULT = 42; //the answer to everything
     private DatabaseReference mDatabaseReference;
     private FirebaseDatabase mFirebaseDatabase;
     EditText txtTitle;
