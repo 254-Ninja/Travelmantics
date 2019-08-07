@@ -29,7 +29,10 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-
+//Firebase database
+//connecting to a firebase database
+//Authentication
+//firebase picture storage
 public class DealActivity extends AppCompatActivity {
     public static final int PICTURE_RESULT = 42; //the answer to everything
     private DatabaseReference mDatabaseReference;
